@@ -9,6 +9,18 @@
 //     своєї функції для перевірки коректності її роботи.
 //     У консоль будуть виведені результати її викликів.
 
+function calcAverageCalories(days) {
+  if (days.length === 0) {
+    return 0;
+  }
+  let totalCalories = 0;
+  for (let i = 0; i < days.length; i++) {
+    totalCalories += days[i].calories;
+  }
+  const averageCalories = totalCalories / days.length;
+  return averageCalories;
+}
+
 console.log(
   calcAverageCalories([
     { day: 'monday', calories: 3010 },
@@ -34,12 +46,3 @@ console.log(
 ); // 2270
 
 console.log(calcAverageCalories([])); // 0
-
-function calcAverageCalories(days) {
-  let totalCalories = 0;
-  for (let i = 0; i < days.length; i++) {
-    totalCalories += days[i].calories;
-  }
-  const averageCalories = totalCalories / days.length;
-  return averageCalories;
-}
